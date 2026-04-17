@@ -1,4 +1,4 @@
-# pi-extension-opencode-go
+# pi-opencode-go
 
 OpenCode Go provider extension for [pi](https://github.com/mariozechner/pi-coding-agent) coding agent.
 
