@@ -23,7 +23,7 @@ Add to your pi `settings.json` (`~/.pi/agent/settings.json`):
 ```json
 {
   "packages": [
-    "git:https://github.com/mariozechner/pi-extension-opencode-go.git"
+    "git:https://github.com/awtotty/pi-opencode-go.git"
   ]
 }
 ```
@@ -31,13 +31,13 @@ Add to your pi `settings.json` (`~/.pi/agent/settings.json`):
 ### Option 2: Clone locally
 
 ```bash
-git clone https://github.com/mariozechner/pi-extension-opencode-go.git ~/.pi/agent/extensions/opencode-go
+git clone https://github.com/awtotty/pi-opencode-go.git ~/.pi/agent/extensions/pi-opencode-go
 ```
 
 ### Option 3: Global install via npm
 
 ```bash
-npm install -g pi-extension-opencode-go
+npm install -g pi-opencode-go
 ```
 
 Then add to settings.json:
@@ -45,7 +45,7 @@ Then add to settings.json:
 ```json
 {
   "packages": [
-    "npm:pi-extension-opencode-go"
+    "npm:pi-opencode-go"
   ]
 }
 ```
@@ -133,8 +133,8 @@ Verify the model name is correct. Model IDs are case-sensitive.
 
 ```bash
 # Clone the repository
-git clone https://github.com/mariozechner/pi-extension-opencode-go.git
-cd pi-extension-opencode-go
+git clone https://github.com/awtotty/pi-opencode-go.git
+cd pi-opencode-go
 
 # Install dependencies (if any)
 npm install
