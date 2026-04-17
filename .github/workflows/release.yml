@@ -28,6 +28,8 @@ jobs:
         run: node -e "const p=JSON.parse(require('fs').readFileSync('package.json')); console.log('Package:', p.name, 'v' + p.version)"
 
       - name: Publish to npm
-        run: npm publish
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > .npmrc
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
