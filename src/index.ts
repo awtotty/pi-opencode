@@ -97,6 +97,7 @@ const ZEN_OPENAI_MODELS: ModelDef[] = [
 	{ id: "kimi-k2.5", name: "Kimi K2.5", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
 	{ id: "kimi-k2", name: "Kimi K2", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
 	{ id: "kimi-k2-thinking", name: "Kimi K2 Thinking", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
+	{ id: "kimi-k2.6", name: "Kimi K2.6", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
 	{ id: "big-pickle", name: "Big Pickle", reasoning: false, input: ["text"], contextWindow: 128000, maxTokens: 16384 },
 	{ id: "nemotron-3-super-free", name: "Nemotron 3 Super Free", reasoning: false, input: ["text"], contextWindow: 128000, maxTokens: 16384 },
 ];
