@@ -122,6 +122,7 @@ const GO_OPENAI_MODELS: ModelDef[] = [
 	{ id: "glm-5.1", name: "GLM 5.1", reasoning: true, input: ["text"], contextWindow: 128000, maxTokens: 16384 },
 	{ id: "glm-5", name: "GLM 5", reasoning: true, input: ["text"], contextWindow: 128000, maxTokens: 16384 },
 	{ id: "kimi-k2.5", name: "Kimi K2.5", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
+	{ id: "kimi-k2.6", name: "Kimi K2.6", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
 	{ id: "mimo-v2-pro", name: "MiMo V2 Pro", reasoning: true, input: ["text"], contextWindow: 128000, maxTokens: 32768 },
 	{ id: "mimo-v2-omni", name: "MiMo V2 Omni", reasoning: true, input: ["text", "image"], contextWindow: 128000, maxTokens: 32768 },
 	{ id: "qwen3.6-plus", name: "Qwen 3.6 Plus", reasoning: false, input: ["text"], contextWindow: 1000000, maxTokens: 65536 },
