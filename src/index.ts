@@ -127,6 +127,8 @@ const GO_OPENAI_MODELS: ModelDef[] = [
 	{ id: "mimo-v2-omni", name: "MiMo V2 Omni", reasoning: true, input: ["text", "image"], contextWindow: 128000, maxTokens: 32768 },
 	{ id: "qwen3.6-plus", name: "Qwen 3.6 Plus", reasoning: false, input: ["text"], contextWindow: 1000000, maxTokens: 65536 },
 	{ id: "qwen3.5-plus", name: "Qwen 3.5 Plus", reasoning: false, input: ["text"], contextWindow: 1000000, maxTokens: 65536 },
+	{ id: "deepseek-v4-flash", name: "DeepSeek V4 Flash", reasoning: true, input: ["text"], contextWindow: 1000000, maxTokens: 384000 },
+	{ id: "deepseek-v4-pro", name: "DeepSeek V4 Pro", reasoning: true, input: ["text"], contextWindow: 1000000, maxTokens: 384000 },
 ];
 
 const GO_ANTHROPIC_MODELS: ModelDef[] = [
