@@ -97,6 +97,7 @@ const ZEN_OPENAI_MODELS: ModelDef[] = [
 	{ id: "kimi-k2.5", name: "Kimi K2.5", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
 	{ id: "kimi-k2", name: "Kimi K2", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
 	{ id: "kimi-k2-thinking", name: "Kimi K2 Thinking", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
+	{ id: "kimi-k2.6", name: "Kimi K2.6", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
 	{ id: "big-pickle", name: "Big Pickle", reasoning: false, input: ["text"], contextWindow: 128000, maxTokens: 16384 },
 	{ id: "nemotron-3-super-free", name: "Nemotron 3 Super Free", reasoning: false, input: ["text"], contextWindow: 128000, maxTokens: 16384 },
 ];
@@ -121,10 +122,13 @@ const GO_OPENAI_MODELS: ModelDef[] = [
 	{ id: "glm-5.1", name: "GLM 5.1", reasoning: true, input: ["text"], contextWindow: 128000, maxTokens: 16384 },
 	{ id: "glm-5", name: "GLM 5", reasoning: true, input: ["text"], contextWindow: 128000, maxTokens: 16384 },
 	{ id: "kimi-k2.5", name: "Kimi K2.5", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
+	{ id: "kimi-k2.6", name: "Kimi K2.6", reasoning: true, input: ["text", "image"], contextWindow: 262144, maxTokens: 65536 },
 	{ id: "mimo-v2-pro", name: "MiMo V2 Pro", reasoning: true, input: ["text"], contextWindow: 128000, maxTokens: 32768 },
 	{ id: "mimo-v2-omni", name: "MiMo V2 Omni", reasoning: true, input: ["text", "image"], contextWindow: 128000, maxTokens: 32768 },
 	{ id: "qwen3.6-plus", name: "Qwen 3.6 Plus", reasoning: false, input: ["text"], contextWindow: 1000000, maxTokens: 65536 },
 	{ id: "qwen3.5-plus", name: "Qwen 3.5 Plus", reasoning: false, input: ["text"], contextWindow: 1000000, maxTokens: 65536 },
+	{ id: "deepseek-v4-flash", name: "DeepSeek V4 Flash", reasoning: true, input: ["text"], contextWindow: 1000000, maxTokens: 384000 },
+	{ id: "deepseek-v4-pro", name: "DeepSeek V4 Pro", reasoning: true, input: ["text"], contextWindow: 1000000, maxTokens: 384000 },
 ];
 
 const GO_ANTHROPIC_MODELS: ModelDef[] = [
