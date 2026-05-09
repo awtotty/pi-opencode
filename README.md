@@ -1,19 +1,17 @@
 # pi-opencode
 
-OpenCode provider extension for [pi](https://github.com/mariozechner/pi-coding-agent) coding agent.
-
-Access OpenCode Zen (cash balance) and OpenCode Go (subscription credits) models.
+Extension for the [pi](https://github.com/mariozechner/pi-coding-agent) coding agent to add OpenCode as a provider. 🙂
 
 ## Features
 
-- **opencode-zen** / **opencode-zen-anthropic**: Pay-as-you-go (https://opencode.ai/zen)
-- **opencode-go** / **opencode-go-anthropic**: Subscription credits (https://opencode.ai/zen/go)
 - **40+ models**: GPT, Claude, Gemini, GLM, Kimi, Qwen, MiniMax, and more
+- **opencode-go**: Subscription service (https://opencode.ai/zen/go)
+- **opencode-zen**: Pay-as-you-go (https://opencode.ai/zen)
 
 ## Prerequisites
 
-- [pi](https://github.com/mariozechner/pi-coding-agent) installed
-- OpenCode account at https://opencode.ai/auth
+- You already have the [pi](https://github.com/earendil-works/pi) coding agent installed.
+- You have an OpenCode account: https://opencode.ai/auth 
 
 ## Installation
 
@@ -24,7 +22,7 @@ Add to your pi `settings.json` (`~/.pi/agent/settings.json`):
 ```json
 {
   "packages": [
-    "git:https://github.com/awtotty/pi-opencode.git"
+    "git:https://github.com/ShalokShalom/pi-opencode.git"
   ]
 }
 ```
@@ -32,7 +30,7 @@ Add to your pi `settings.json` (`~/.pi/agent/settings.json`):
 ### Option 2: Clone locally
 
 ```bash
-git clone https://github.com/awtotty/pi-opencode.git ~/.pi/agent/extensions/pi-opencode
+git clone https://github.com/ShalokShalom/pi-opencode.git ~/.pi/agent/extensions/pi-opencode
 ```
 
 ## Configuration
@@ -40,44 +38,66 @@ git clone https://github.com/awtotty/pi-opencode.git ~/.pi/agent/extensions/pi-o
 ### 1. Get your API key
 
 1. Sign up at https://opencode.ai/auth
-2. Add billing for Zen or subscribe to Go
+2. Pay for the service via the billing menu
 3. Copy your API key
 
 ### 2. Set the environment variable
+
+Add this line to the shell config (`~/.bashrc`, `~/.zshrc`, `~/.config/fish/config.fish`)
+
+Bash, Zsh, etc
 
 ```bash
 export OPENCODE_API_KEY="your-api-key-here"
 ```
 
-Add to shell profile (~/.bashrc, ~/.zshrc, etc.) to persist.
+Fish
 
-### 3. Reload pi
+```fish
+set -Ux OPENCODE_API_KEY "your-api-key-here"
+```
 
-```
-/reload
-```
+### 3. Open pi
+
+**First**, open a new shell to load the config (`exec bash`, `exec zsh`, `exec fish`).  
+**Now** open `pi`.
 
 ## Usage
 
 ### Select a provider and model
 
-```
+Type `/model` to select a model. 
+
+You can also select one directly via the full path:
+
+```bash
 /model opencode-zen/gpt-5.1
 /model opencode-go-anthropic/minimax-m2.7
 ```
 
-Or use `/model` to browse all available options.
+## Recommended Configuration
+
+```
+{
+  "packages": [
+    "git:https://github.com/ShalokShalom/pi-opencode.git"
+  ],
+  "defaultProvider": "opencode-go",
+  "defaultModel": "deepseek-v4-flash"
+}
+```
 
 ### Available Providers
 
+MiniMax M2.7 and M2.5 use the Anthropic Messages API.  
+All other models use the OpenAI Chat Completions.
+
 | Provider | API | Endpoint |
 |----------|-----|----------|
-| opencode-zen | OpenAI Chat Completions | https://opencode.ai/zen/v1/chat/completions |
-| opencode-zen-anthropic | Anthropic Messages | https://opencode.ai/zen/v1/messages |
 | opencode-go | OpenAI Chat Completions | https://opencode.ai/zen/go/v1/chat/completions |
+| opencode-zen | OpenAI Chat Completions | https://opencode.ai/zen/v1/chat/completions |
 | opencode-go-anthropic | Anthropic Messages | https://opencode.ai/zen/go/v1/messages |
-
-> MiniMax M2.7 and M2.5 use the Anthropic Messages API. All other models use OpenAI Chat Completions.
+| opencode-zen-anthropic | Anthropic Messages | https://opencode.ai/zen/v1/messages |
 
 ## Troubleshooting
 
@@ -87,12 +107,7 @@ Or use `/model` to browse all available options.
 echo $OPENCODE_API_KEY
 ```
 
-If empty, set it and reload pi:
-
-```bash
-export OPENCODE_API_KEY="your-key"
-/reload
-```
+If empty, set it as shown in [step 2](#2-set-the-environment-variable)
 
 ### Extension not loading
 
@@ -100,7 +115,7 @@ Run `/reload` after changes.
 
 ### Model not found
 
-Verify the model name is correct. Model IDs are case-sensitive.
+Verify that the model name is correct; they are case-sensitive.
 
 ## Development
 
@@ -120,6 +135,6 @@ MIT
 ## Links
 
 - [pi coding agent](https://github.com/mariozechner/pi-coding-agent)
-- [OpenCode Zen](https://opencode.ai/docs/zen/)
 - [OpenCode Go](https://opencode.ai/docs/go/)
+- [OpenCode Zen](https://opencode.ai/docs/zen/)
 - [OpenCode](https://opencode.ai/auth)
