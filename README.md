@@ -45,17 +45,24 @@ git clone https://github.com/awtotty/pi-opencode.git ~/.pi/agent/extensions/pi-o
 
 ### 2. Set the environment variable
 
+Bash, ZSH, etc:
+
 ```bash
 export OPENCODE_API_KEY="your-api-key-here"
 ```
 
-Add to shell profile (~/.bashrc, ~/.zshrc, etc.) to persist.
+Fish: 
 
-### 3. Reload pi
+```fish
+set -Ux OPENCODE_API_KEY "your-api-key-here"
+```
 
-```
-/reload
-```
+Add to shell profile (~/.bashrc, ~/.zshrc, ~/.config/fish/config.fish, etc) to persist.
+
+### 3. Open pi
+
+Create a new shell session to load the configuration (`exec bash`, `exec fish`, etc.)
+Now open `pi`.
 
 ## Usage
 
@@ -87,11 +94,14 @@ Or use `/model` to browse all available options.
 echo $OPENCODE_API_KEY
 ```
 
-If empty, set it and reload pi:
+If empty, set it and restart pi with Ctrl+D and `pi`.
 
 ```bash
 export OPENCODE_API_KEY="your-key"
-/reload
+```
+
+```fish
+set -Ux OPENCODE_API_KEY "your-api-key-here"
 ```
 
 ### Extension not loading
@@ -100,7 +110,8 @@ Run `/reload` after changes.
 
 ### Model not found
 
-Verify the model name is correct. Model IDs are case-sensitive.
+Verify the model name is correct. 
+Model IDs are case-sensitive.
 
 ## Development
 
